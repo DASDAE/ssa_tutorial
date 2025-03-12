@@ -1,0 +1,31 @@
+[project]
+name = "ssa-tutorial"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "dascore>=0.1.6",
+    "matplotlib>=3.10.1",
+    "numpy>=2.2.3",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.9.10",
+]
+
+[tool.ruff]
+line-length = 79
+builtins = ["_"]
+
+[tool.ruff.lint]
+# Enable all `pydocstyle` rules, limiting to those that adhere to the
+# Numpy convention via `convention = "numpy"`, below.
+select = ["D", "N", "I", "E", "F"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+docstring-code-format = true
